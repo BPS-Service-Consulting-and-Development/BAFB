@@ -2,6 +2,10 @@
     --primary: #456aff;
   }
 
+  .book-element{
+    height: 45em;
+  }
+
   .mi-button {
     color: white;
     padding: 5px 10px;
@@ -17,3 +21,4 @@
   .mi-button:active {
     background-color: var(--success);
   }
+
