@@ -24,12 +24,13 @@ export class SignUpComponent implements OnInit {
       email: ['', Validators.required, Validators.email],
       password: ['', Validators.required]
     });
+    //this.signUpForm.enable();
   }
 
   onSubmit() {
     console.log('formulario ', this.signUpForm);
 
-    if (this.signUpForm.valid) {
+    // if (this.signUpForm.valid) {
       this.clientsService.signUp(this.signUpForm.value)
         .subscribe(
           (client) => {
@@ -40,9 +41,9 @@ export class SignUpComponent implements OnInit {
             console.error('Error creating client: ', error);
           }
         );
-    } else {
-      swal('Error', 'Debes completar todos los campos', 'error');
-    }
+    // } else {
+    //   swal('Error', 'Debes completar todos los campos' + this.signUpForm.status, 'error');
+    // }
 
     document.getElementById('sign-up-form').classList.add('was-validated');
   }

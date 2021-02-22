@@ -10,8 +10,8 @@
       <div class="d-flex flex-column justify-content-between h-100">
         <p>{{book.description}}</p>
 
-        <div class="">
-          <p>Valor Unitario ${{book.unitValue | currency:'COP '}} </p>
+        <div>
+          <p class="text-primary">Valor Unitario ${{book.unitValue | currency:'COP '}} </p>
           <form id="form_paginaLibro">
               <div class="row g-3 align-items-center">
                   <div class="col-auto">
@@ -24,7 +24,7 @@
           </form>
 
           <div class="border-top border-dark pt-3 mt-3 d-flex justify-content-between">
-              <h5 class="bitstyle d-inline-block">Total ${{quantity.value*book.unitValue | currency:'COP '}}</h5>
+              <h5 class="text-primary d-inline-block">Total ${{quantity.value*book.unitValue | currency:'COP '}}</h5>
               <button class="mi-button btn d-inline-block"><i class="fa fa-shopping-cart"></i> Añadir al carrito</button>
           </div>
       </div>
