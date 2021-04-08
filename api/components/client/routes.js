@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const { authClient, createClient, deleteClient, getClient, getClients, updateClient } = require('./actions')
-const saleRoutes = require('../sale/routes')
+    //const saleRoutes = require('../sale/routes')
 const checkAuthentication = require('../../middlewares/checkAuthentication')
 const checkAuthorization = require('../../middlewares/checkAuthorization')
 
@@ -24,6 +24,6 @@ router.delete('/:id', checkAuthentication, checkAuthorization, deleteClient)
 router.post('/auth', authClient)
 
 // Implementing sales routes
-router.use('/:client_id/sales', checkAuthentication, checkAuthorization, saleRoutes)
+//router.use('/:client_id/sales', checkAuthentication, checkAuthorization, saleRoutes)
 
 module.exports = router

@@ -18,11 +18,11 @@ app.use(cors())
 app.use(bodyParser.json())
 
 // Instalación de rutas en el router principal
-app.use('/books', bookRoutes)
+//app.use('/books', bookRoutes)
 app.use('/clients', clientRoutes)
 
-app.use('/covers', express.static('covers'))
+//app.use('/covers', express.static('covers'))
 
 app.listen(PORT, () => {
-  console.log(`Server APP listening at localhost:${PORT}`)
+    console.log(`Server APP listening at localhost:${PORT}`)
 })
