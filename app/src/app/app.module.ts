@@ -12,6 +12,8 @@ import { BookComponent } from './pages/book/book.component';
 import { BookCardComponent } from './components/book-card/book-card.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { DeskboardComponent } from './pages/deskboard/deskboard.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
     BookComponent,
     BookCardComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    DeskboardComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

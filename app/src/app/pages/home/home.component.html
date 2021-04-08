@@ -1,17 +1,104 @@
-<app-banner></app-banner>
-<div class="container">
-  <div class="row mb-4">
-    <div class="col-12">
-      <div class="d-flex">
-        <button class="btn btn-outline-primary mr-2">BUSCAR</button>
-        <input type="text" class="form-control" placeholder="¿Qué quieres leer hoy?" />
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div *ngFor="let book of books" class="col-12 col-sm-6 col-md-4 col-xl-3 mb-3">
-      <app-book-card [book]="book"></app-book-card>
-    </div>
-  </div>
+<!-- <app-banner></app-banner> -->
+<div class="row">
+    <section id="hero">
+        <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+            <h1>Bienvenido a BAFB</h1>
+            <h2>El valor de tus servicios evidenciados en tiempo real</h2>
+            <a href="#about" class="btn-get-started">Iniciar</a>
+        </div>
+    </section>
 </div>
+<!-- End Hero Section -->
+
+<main id="main">
+
+    <section id="about">
+        <div class="container mt-5" data-aos="fade-up">
+            <div class="row about-container">
+
+                <div class="col-lg-6 content order-lg-1 order-2">
+                    <h2 class="title">¿Qué es BPS Analytics for Business?</h2>
+                    <p>
+                        Es la mejor solución para centralizar la información de tu negocio, como el comportamiento de tu servicio y toda la información que el data science puede aportar para aumentar su valor.
+                    </p>
+
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon"><img src="../../../assets/images/grafico.png" alt=""></div>
+                        <h4 class="title"><a href="">¿Cómo centralizamos la información?</a></h4>
+                        <p class="description">Utilizando las ventajas de Power BI generamos las gráficas mas adecuadas para identificar los puntos de dolor en el desempeño de los servicios</p>
+                    </div>
+
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><img src="../../../assets/images/inteligencia.png" alt=""></div>
+                        <h4 class="title"><a href="">¿Cuáles son las ventajas del BAFB?</a></h4>
+                        <p class="description">Procesando la información del comportamiento de tu negocio y aplicando estrategias de Business Inteligence y Data Science logramos detectar los desiciones adecuadas para el futuro de tu negocio</p>
+                    </div>
+
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon"><img src="../../../assets/images/accesibilidad.png" alt=""></div>
+                        <h4 class="title"><a href="">Interfaz Intuitiva</a></h4>
+                        <p class="description">Nuestra interfaz tiene un diseño amigable y fácil de usar para nuevos usuarios. Enfocando la estrategias de desarrollo para un funcionamiento rápido y eficaz.</p>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 background order-lg-2 order-1" data-aos="fade-left" data-aos-delay="100"></div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End About Section -->
+
+    <!-- ======= Facts Section ======= -->
+    <section id="facts">
+        <div class="container" data-aos="fade-up">
+            <div class="section-header">
+                <h3 class="section-title">Estadísticas</h3>
+                <p class="section-description"></p>
+            </div>
+            <div class="row counters">
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-toggle="counter-up">232</span>
+                    <p>Clientes</p>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-toggle="counter-up">521</span>
+                    <p>Proyectos</p>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-toggle="counter-up">1,463</span>
+                    <p>Horas de soporte</p>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-toggle="counter-up">15</span>
+                    <p>Trabajadores</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- End Facts Section -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong>BAFB</strong>. Todos los derechos reservados.
+            </div>
+            <div class="credits">
+                Designed by <a href="https://bpsconsultores.com/">BPS Consultores</a>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->

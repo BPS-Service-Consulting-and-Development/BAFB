@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ClientsService } from '../../services/clients.service';
+import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+import { TokenService } from 'src/app/services/token.service';
 import swal from 'sweetalert';
 
 @Component({
@@ -13,35 +15,37 @@ export class SignInComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private clientsService: ClientsService
+    private authenticationService: AuthenticationService,
+    private tokenService: TokenService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
     this.signInForm = this.formBuilder.group({
-      email: ['', Validators.required, Validators.email],
+      email: ['', Validators.required],
       password: ['', Validators.required]
     });
   }
 
   onSubmit() {
-    console.log('formulario ', this.signInForm);
-
     if (this.signInForm.valid) {
-      this.clientsService.signUp(this.signInForm.value)
+      const { email, password } = this.signInForm.value;
+      this.authenticationService.signInWithEmailAndPassword(email, password)
         .subscribe(
-          (client) => {
-            console.log('client ', client)
+          (token: any) => {
+            console.log('token ', token);
+            this.tokenService.saveToken(token.jwt);
+            this.router.navigate(['/home']);
           },
-          (error) => {
-            swal('Error', 'No se pudo completar el registro.', 'error');
-            console.error('Error creating client: ', error);
+          (response) => {
+            swal('Error', 'Datos invalidos', 'error');
+            console.error('Error authenticating client: ', response);
           }
         );
     } else {
+      console.log('form ', this.signInForm);
       swal('Error', 'Debes completar todos los campos', 'error');
     }
-
-    document.getElementById('sign-up-form').classList.add('was-validated');
   }
 
 }
